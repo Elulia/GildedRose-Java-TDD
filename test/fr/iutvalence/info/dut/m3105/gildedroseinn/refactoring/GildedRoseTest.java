@@ -8,14 +8,14 @@ public class GildedRoseTest
 {
 	
 	
-	private static final Item firstItem = (new Item("+5 Dexterity Vest", 10, 20));
+	private static final Item FIRST_ITEM = (new Item("+5 Dexterity Vest", 10, 20));
 	
 	@Test
 	public void testSellinAndQualityDecrease()
 	{
-		GildedRose.updateItem(firstItem);
-		assertEquals(firstItem.getSellIn(),9);
-		assertEquals(firstItem.getQuality(),19);
+		GildedRose.updateItem(FIRST_ITEM);
+		assertEquals(FIRST_ITEM.getSellIn(),9);
+		assertEquals(FIRST_ITEM.getQuality(),19);
 	}
 
 }
