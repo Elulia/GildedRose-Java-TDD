@@ -2,6 +2,7 @@ package fr.iutvalence.info.dut.m3105.gildedroseinn.refactoring;
 
 public class Item
 {
+	private static final int MAX_QUALITY = 50;
 	private final String name;
 	private int sellIn;
 	private int quality;
@@ -52,8 +53,16 @@ public class Item
 		return false;
 	}
 	
-	
 	public void resetQuality(){
 		this.setQuality(0);
 	}
+	
+	public boolean isMaxQualityReached(){
+		if (this.quality > MAX_QUALITY){
+			return true;
+		}
+		return false;
+	}
+	
+	
 }
