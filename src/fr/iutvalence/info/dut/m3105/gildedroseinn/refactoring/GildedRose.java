@@ -36,14 +36,20 @@ public class GildedRose
 	
 	public static void updateQuality(Item item)
 	{
-		item.decreaseQuality();
-		if (item.isOutdated())
-		{
+		switch (item.getName()) {
+		case "Aged Brie":
+			item.increaseQuality();
+			break;
+		default:
 			item.decreaseQuality();
-		}
-		if (item.getQuality() < 0)
-		{
-			item.resetQuality();
+			if (item.isOutdated())
+			{
+				item.decreaseQuality();
+			}
+			if (item.getQuality() < 0)
+			{
+				item.resetQuality();
+			}
 		}
 	}
 		

@@ -41,6 +41,10 @@ public class Item
 		this.quality -=1;
 	}
 	
+	public void increaseQuality(){
+		this.quality +=1;
+	}
+	
 	public boolean isOutdated(){
 		if (this.sellIn < 0){
 			return true;
