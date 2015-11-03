@@ -10,6 +10,7 @@ public class GildedRoseTest
 	
 	private static final Item FIRST_ITEM = (new Item("+5 Dexterity Vest", 10, 20));
 	private static final Item SECOND_ITEM = (new Item("+5 Dexterity Vest", 0, 20));
+	private static final Item THIRD_ITEM = (new Item("+5 Dexterity Vest", 10, 0));
 	
 	@Test
 	public void testNoConditionSellinAndQualityDecrease()
@@ -25,6 +26,14 @@ public class GildedRoseTest
 		GildedRose.updateItem(SECOND_ITEM);
 		assertEquals(SECOND_ITEM.getSellIn(),-1);
 		assertEquals(SECOND_ITEM.getQuality(),18);
+	}
+
+	@Test
+	public void testQualityInferiorToZeroSellinAndQualityDecrease()
+	{
+		GildedRose.updateItem(THIRD_ITEM);
+		assertEquals(THIRD_ITEM.getSellIn(),9);
+		assertEquals(THIRD_ITEM.getQuality(),0);
 	}
 
 }
