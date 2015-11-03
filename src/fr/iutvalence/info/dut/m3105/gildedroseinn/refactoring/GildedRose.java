@@ -36,21 +36,15 @@ public class GildedRose
 	
 	public static void updateQuality(Item item)
 	{
-		if (testIfOutDated(item))
+		item.decreaseQuality();
+		if (item.isOutdated())
 		{
 			item.decreaseQuality();
 		}
-		item.decreaseQuality();
 		if (item.getQuality() < 0)
 		{
-			item.setQuality(0);
+			item.resetQuality();
 		}
 	}
 		
-	public static boolean testIfOutDated(Item item){
-		if (item.getSellIn() < 0){
-			return true;
-		}
-		return false;
-	}
 }
