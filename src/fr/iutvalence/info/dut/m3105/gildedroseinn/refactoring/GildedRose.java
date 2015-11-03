@@ -41,6 +41,10 @@ public class GildedRose
 			item.decreaseQuality();
 		}
 		item.decreaseQuality();
+		if (item.getQuality() < 0)
+		{
+			item.setQuality(0);
+		}
 	}
 		
 	public static boolean testIfOutDated(Item item){
