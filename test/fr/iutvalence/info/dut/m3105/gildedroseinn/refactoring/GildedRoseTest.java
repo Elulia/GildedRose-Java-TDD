@@ -11,6 +11,8 @@ public class GildedRoseTest
 	private static final Item FIRST_ITEM = (new Item("+5 Dexterity Vest", 10, 20));
 	private static final Item SECOND_ITEM = (new Item("+5 Dexterity Vest", 0, 20));
 	private static final Item THIRD_ITEM = (new Item("+5 Dexterity Vest", 10, 0));
+	private static final Item AGED_BRIE= (new Item("Aged Brie", 2, 0));
+	
 	
 	@Test
 	public void testNoConditionSellinAndQualityDecrease()
@@ -34,6 +36,14 @@ public class GildedRoseTest
 		GildedRose.updateItem(THIRD_ITEM);
 		assertEquals(THIRD_ITEM.getSellIn(),9);
 		assertEquals(THIRD_ITEM.getQuality(),0);
+	}
+	
+	@Test
+	public void testAgedBrieSellinAndQualityDecrease()
+	{
+		GildedRose.updateItem(AGED_BRIE);
+		assertEquals(AGED_BRIE.getSellIn(),1);
+		assertEquals(AGED_BRIE.getQuality(),1);
 	}
 
 }
