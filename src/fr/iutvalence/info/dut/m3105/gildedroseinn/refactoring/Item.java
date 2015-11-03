@@ -42,4 +42,12 @@ public class Item
 	{
 		this.quality = quality;
 	}
+	
+	public void decreaseSellIn(){
+		this.sellIn -=1;
+	}
+	
+	public void decreaseQuality(){
+		this.quality -=1;
+	}
 }

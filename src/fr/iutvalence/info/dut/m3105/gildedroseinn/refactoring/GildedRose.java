@@ -29,16 +29,24 @@ public class GildedRose
 		updateQuality(item);	
 	}
 	
-	public static void updateQuality(Item item){
-		if (item.getSellIn() < 0)
-		{
-		item.setQuality(item.getQuality()-1);
-		}
-		item.setQuality(item.getQuality()-1);
+	public static void updateSellIn(Item item)
+	{
+		item.decreaseSellIn();
 	}
 	
-	public static void updateSellIn(Item item){
-		item.setSellIn(item.getSellIn()-1);
+	public static void updateQuality(Item item)
+	{
+		if (testIfOutDated(item))
+		{
+			item.decreaseQuality();
+		}
+		item.decreaseQuality();
 	}
-
+		
+	public static boolean testIfOutDated(Item item){
+		if (item.getSellIn() < 0){
+			return true;
+		}
+		return false;
+	}
 }
