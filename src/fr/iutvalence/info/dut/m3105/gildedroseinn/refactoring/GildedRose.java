@@ -25,6 +25,9 @@ public class GildedRose
 
 	public static void updateItem(Item item)
 	{	
+		
 	}
+	
+	
 
 }
